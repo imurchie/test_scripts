@@ -4,7 +4,7 @@
 # don't install all the documentation at the moment
 GEM_INSTALL_OPTS="--no-ri --no-rdoc"
 
-if ! gem list rspec -i > /dev/null; then
+if ! gem list rspec | grep '^rspec (' > /dev/null; then
   echo "Installing RSpec gem"
   gem install $GEM_INSTALL_OPTS rspec
 fi
