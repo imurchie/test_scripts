@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# remote invocation:
+# curl -L https://raw.github.com/imurchie/test_scripts/master/install_tutorial.sh | bash
+
 
 # don't install all the documentation at the moment
 GEM_INSTALL_OPTS="--no-ri --no-rdoc"
