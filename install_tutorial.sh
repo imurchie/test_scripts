@@ -6,6 +6,13 @@
 
 # don't install all the documentation at the moment
 GEM_INSTALL_OPTS="--no-ri --no-rdoc"
+TEST_FILE_URL=https://raw.github.com/appium/appium/master/sample-code/examples/ruby/sauce_example.rb
+
+
+if ! which ruby > /dev/null; then
+  echo "No Ruby installation found"
+  exit
+fi
 
 if ! gem list rspec | grep '^rspec (' > /dev/null; then
   echo "Installing RSpec gem"
@@ -18,4 +25,4 @@ if ! gem list selenium-webdriver -i > /dev/null; then
 fi
 
 echo "Downloading SauceTest.rb to the current directory"
-curl -s https://raw.github.com/appium/appium/master/sample-code/examples/ruby/sauce_example.rb > SauceTest.rb
+curl -s $TEST_FILE_URL > SauceTest.rb
